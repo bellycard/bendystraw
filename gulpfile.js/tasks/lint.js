@@ -14,7 +14,7 @@ var eslint = require('gulp-eslint');
 
 function lintSass(fail, callback) {
   if (!config.styles.sass || !config.lint.sasslint.enabled)
-    return callback();
+    return;
 
   return gulp.src(path.join(config.paths.src, '**/*.{' + config.extensions.styles + '}'))
     .pipe(sasslint(config.lint.sasslint))
